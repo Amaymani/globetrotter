@@ -131,6 +131,7 @@ const Quiz = () => {
         setSelected('');
         getRandomDestination();
         updateHighScore();
+        setShowNextClue(false);
         
     }
 
