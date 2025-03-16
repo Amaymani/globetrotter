@@ -1,15 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Globe } from 'lucide-react'
 import { signIn, signOut, useSession } from "next-auth/react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import axios from 'axios'
+
 
 const Navbar = () => {
   const { data: session, status } = useSession();
+  const [username, setUsername] = useState('')
 
   if (status === "loading") {
     return <p>Loading session...</p>;
   }
 
-  console.log(session)
+
   return (
     <div className='flex items-cente p-4 text-white bg-white dark:bg-zinc-800'>
       <div>
@@ -28,7 +39,8 @@ const Navbar = () => {
             <button onClick={() => signOut()}>Sign out</button>
           </div>
         ) : (
-          <button onClick={() => signIn("google")}>Sign in with Google</button>
+
+          <button onClick={() => signIn("google")} className='mt-3 p-3 '>Sign in with Google</button>              
         )}
       </div>
 
