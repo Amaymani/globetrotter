@@ -42,6 +42,7 @@ const Quiz = () => {
     const [wrongAnswers, setWrongAnswers] = useState(0);
     const [totalAnswers, setTotalAnswers] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
     useEffect(() => {
         getRandomDestination();
@@ -110,10 +111,12 @@ const Quiz = () => {
         try {
             const response = await axios.get(`/api/highscore?email=${session.user.email}`);
             const highScore = response.data.highscore;
+            setHighScore(highScore);
             console.log(score, highScore);
             if (score > highScore) {
                 console.log(score, highScore);
                 await axios.post('/api/highscore', {email: session.user.email,  highscore: score });
+                setHighScore(score);
                 console.log('New high score updated!');
             } else {
                 console.log('Score did not beat the high score.');
@@ -207,9 +210,9 @@ const Quiz = () => {
 
             {selected &&
                 <div>
-                    <Fact isCorrect={correct} fact={randomDestination.correctDestination.fun_fact[0]} onNextGame={nextQuestion} />
+                    <Fact isCorrect={correct}  fact={randomDestination.correctDestination.fun_fact[0]} onNextGame={nextQuestion} />
                     <div ref={cardRef} id='score-card'>
-                        <ScoreCard score={score} correctAnswers={correctAnswers} totalAnswers={totalAnswers} accuracy={accuracy} />
+                        <ScoreCard score={score} highscore={highScore} correctAnswers={correctAnswers} totalAnswers={totalAnswers} accuracy={accuracy} />
                     </div>
 
                     <Dialog>

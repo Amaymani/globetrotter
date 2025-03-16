@@ -21,11 +21,6 @@ export default function Home() {
 
 
 
-      {/* {data.map((item, index) => (
-        <div key={index}>
-          <h1>{item.city}</h1>
-        </div>))} */}
-
 
     </div>
   );

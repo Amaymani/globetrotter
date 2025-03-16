@@ -3,10 +3,11 @@ import { Trophy, Check, X } from 'lucide-react'
 
 
 
-const ScoreCard = ({score, correctAnswers, totalAnswers, accuracy}) => {
+const ScoreCard = ({score,  correctAnswers, totalAnswers, accuracy, highscore}) => {
 
   return (
     <div  className=" p-6 mt-8 w-full animate-fade-in">
+      <div className='flex justify-center font-bold'>Highscore:{highscore}</div>
     <h3 className="text-lg font-semibold mb-4 flex items-center">
       <Trophy className="h-5 w-5 text-yellow-500 mr-2" />
       Your Stats
