@@ -148,7 +148,7 @@ const Quiz = () => {
     };
 
     const shareImage = () => {
-        const customLink = `https://globetrotter.com/challenge?score=${score}`;
+        const customLink = `https://globetrotter-plum.vercel.app/?score=${score}`;
         const message = `🌍 I just played Globetrotter!\n💯 Score: ${score}\n \nCan you beat my score? Check it out here: ${customLink}`;
         const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}&url=${encodeURIComponent(imageUrl)}`;
 
