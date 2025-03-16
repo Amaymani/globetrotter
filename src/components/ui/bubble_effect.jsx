@@ -17,30 +17,30 @@ const BubbleEffect = () => {
         },
         particles: {
           number: {
-            value: 40,
+            value: 10,
             density: {
               enable: true,
               value_area: 800,
             },
           },
           color: {
-            value: "#ddb2ff",
+            value: "#7366e3",
           },
           shape: {
             type: "circle",
           },
           opacity: {
-            value: 0.5,
+            value: 0.2,
             random: true,
             anim: {
               enable: true,
               speed: 1,
-              opacity_min: 1,
+              opacity_min: 0.1,
               sync: false,
             },
           },
           size: {
-            value: 15,
+            value: 20,
             random: true,
             anim: {
               enable: true,
@@ -51,7 +51,7 @@ const BubbleEffect = () => {
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 2,
             direction: "none",
             random: false,
             straight: false,

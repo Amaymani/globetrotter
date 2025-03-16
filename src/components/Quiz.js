@@ -165,8 +165,9 @@ const Quiz = () => {
 
     return (
         <section className="container px-6 py-6 flex flex-col justify-center pt-16">
+            <div className='flex justify-center'>
             <Badge className={"bg-transparent text-md mb-2  text-purple-800"}>Answer & Unlock Your Next Stop! ✈</Badge>
-
+            </div>
 
             <QuestionCard className="question text-xl bg-sky-50 p-6 min-h-[120px] max-w-[76rem] rounded-3xl flex items-center justify-center mb-6 transition-all duration-500 transform relative">
                 <span className="text-center">
@@ -233,8 +234,8 @@ const Quiz = () => {
                             </button>
                         </DialogTrigger>
 
-                        <DialogContent>
-                            <DialogHeader>
+                        <DialogContent >
+                            <DialogHeader className={`w-full`}>
                                 <DialogTitle>Share on whatsapp</DialogTitle>
                                 <DialogDescription>
                                     Let them know your score!

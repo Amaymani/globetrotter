@@ -1,51 +1,48 @@
-import React, {useState} from 'react'
-import { Globe } from 'lucide-react'
+import React, { useState } from "react";
+import { Globe } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import axios from 'axios'
-
 
 const Navbar = () => {
   const { data: session, status } = useSession();
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState("");
 
   if (status === "loading") {
     return <p>Loading session...</p>;
   }
 
-
   return (
-    <div className='flex items-cente p-4 text-white bg-white dark:bg-zinc-800'>
-      <div>
-        <Globe size={32} className='text-sky-600 ' />
-      </div>
-      <div>
-        <div className='text-2xl font-bold text-black pl-4'>
-          Globetrotter
-        </div>
+    <nav className="flex items-center justify-between p-4 bg-[#7366e3] shadow-md">
+      {/* Left: Logo & Title */}
+      <div className="flex items-center space-x-3">
+        <Globe size={32} className="text-white" />
+        <h1 className="text-2xl font-bold text-white">Globetrotter</h1>
       </div>
 
-      <div className='w-full flex justify-end text-black'>
+      {/* Right: Auth Section */}
+      <div>
         {session ? (
-          <div>
-            <p>Welcome, {session.user.name}</p>
-            <button onClick={() => signOut()}>Sign out</button>
+          <div className="flex items-center space-x-4">
+            <p className="text-white font-medium hidden sm:block">
+              Welcome, {session.user.name}
+            </p>
+            <button
+              onClick={() => signOut()}
+              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-all"
+            >
+              Sign Out
+            </button>
           </div>
         ) : (
-
-          <button onClick={() => signIn("google")} className='mt-3 p-3 '>Sign in with Google</button>              
+          <button
+            onClick={() => signIn("google")}
+            className="bg-white text-[#7366e3] hover:bg-[#5a4cd1] hover:text-white px-4 py-2 rounded-lg transition-all font-medium shadow"
+          >
+            Sign in with Google
+          </button>
         )}
       </div>
+    </nav>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
