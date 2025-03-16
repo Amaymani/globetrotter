@@ -13,7 +13,7 @@ const BubbleEffect = () => {
       init={particlesInit}
       options={{
         background: {
-          color: "#6d56f0",
+          color: "F8F9FF",
         },
         particles: {
           number: {
@@ -24,7 +24,7 @@ const BubbleEffect = () => {
             },
           },
           color: {
-            value: "#7366e3",
+            value: "#ddb2ff",
           },
           shape: {
             type: "circle",
@@ -51,7 +51,7 @@ const BubbleEffect = () => {
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 1,
             direction: "none",
             random: false,
             straight: false,

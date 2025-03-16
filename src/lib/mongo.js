@@ -20,4 +20,6 @@ async function connectDB() {
   return cached.conn;
 }
 
+console.log("Connected to MongoDB");
+
 export default connectDB;

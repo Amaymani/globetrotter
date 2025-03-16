@@ -11,14 +11,14 @@ const Hero = () => {
         {/* GlobeTrotter Text with Shadow & 3D Effect */}
         <h1 className="text-6xl font-extrabold tracking-wide relative">
           <span className="text-yellow-400 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.2)]">GLOBE</span>
-          <br />
-          <span className="text-white drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)]">TROTTER</span>
+          <span className="text-purple-500 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.4)]">TROTTER</span>
         </h1>
       </div>
 
       {/* Subtitle */}
-      <p className="text-lg text-gray-200 mt-4 max-w-lg leading-relaxed">
-        🌍 Explore the world through clues! Test your knowledge and guess famous destinations.
+      <p className="text-lg text-[#6A0DAD] font-bold mt-4 max-w-lg leading-relaxed">
+      🔍 Discover the World, One Clue at a Time!
+
       </p>
     {score&&<p>Your friend's score: {score}</p>}
   </section>

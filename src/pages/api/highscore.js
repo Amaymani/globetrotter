@@ -13,14 +13,12 @@ export default async function handler(req, res) {
                 return res.status(404).json({ error: "User not found" });
             }
 
-            // Ensure highscore exists in DB
             if (user.highscore === "undefined") {
                 user.highscore = 0;
                 await user.save();
             }
 
-            
-
+        
             res.status(200).json({
                 username: user.username,
                 email: user.email,
@@ -43,17 +41,16 @@ export default async function handler(req, res) {
                 return res.status(404).json({ error: "User not found" });
             }
 
-            // Ensure highscore exists before updating
+            
             if (typeof user.highscore === "undefined") {
                 user.highscore = 0;
             }
 
-            // ✅ Only update if new score is higher
             if (highscore > user.highscore) {
                 const updatedUser = await User.findOneAndUpdate(
                     { email: email }, 
                     { highscore: highscore }, 
-                    { new: true } // ✅ Returns updated document
+                    { new: true } 
                 );
 
                 return res.status(200).json({
@@ -63,7 +60,7 @@ export default async function handler(req, res) {
                 });
             }
 
-            // ✅ 304: No update needed
+            
             return res.status(304).end();
         } catch (error) {
             res.status(500).json({ error: "Server error", details: error.message });

@@ -1,8 +1,42 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Check, Frown } from 'lucide-react'
 import { OptionCard } from './ui/card'
 
 const Fact = ({ isCorrect, fact, onNextGame }) => {
+    const [randomMsg, setRandomMsg] = useState('');
+
+    useEffect(() => {
+        getRandomMsg();
+    }, []);
+
+
+    const getRandomMsg = () => {
+        const correctAnswerMessages = [
+            "You Got It! 🎉",
+            "Right on Target! ✅",
+            "You’re a True Globetrotter! 🌍",
+            "Great Job! You Nailed It! 🎯",
+            "Perfect! You're on Fire! 🔥",
+            "Explorer Mode: Activated! 🚀",
+            "You’re a Travel Genius! 🏆",
+            "Bullseye! You Got It Right! 🎯",
+            "You Just Earned Your Next Travel Stamp! 📍",
+            "Globetrotter Confirmed! 🌍",
+            "Your Passport Just Got Another Stamp! 🎟",
+            "Next Stop: Victory! 🏁",
+            "You're Packed and Ready for the Next Destination! 🧳",
+            "You're on a Winning Streak! ⚡",
+            "Champion Move! 🏅",
+            "Rolling High! Keep Going! 🎲",
+            "Brilliant Answer! Keep the Streak Alive! ✨",
+            "Legendary Guess! ⭐"
+        ];
+
+        const randomMessage = correctAnswerMessages[Math.floor(Math.random() * correctAnswerMessages.length)];
+        setRandomMsg(randomMessage);
+    };
+
+
     return (
         <div className="text-center px-6 py-8">
             <div className="flex justify-center mb-6">
@@ -17,8 +51,8 @@ const Fact = ({ isCorrect, fact, onNextGame }) => {
                 )}
             </div>
 
-            <h3 className="text-3xl text-white font-bold mb-10">
-                {isCorrect ? "🎉 Correct! Well done!" : "😢 Oops! Not quite right."}
+            <h3 className="text-3xl text-[#6A0DAD] font-bold mb-10">
+                {isCorrect ? randomMsg : "Good try! You'll get the next one! 😊"}
             </h3>
 
             {fact && (
@@ -32,7 +66,7 @@ const Fact = ({ isCorrect, fact, onNextGame }) => {
             <OptionCard
                 color='bg-green-500'
                 onClick={onNextGame}
-                className="mt-8 px-8 py-4 shadow-lg border-4 border-white text-xl font-bold text-white uppercase rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1 active:translate-y-0"
+                className="mt-8 px-8 py-4 shadow-lg border-4 border-white  text-xl font-bold text-white uppercase rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1 active:translate-y-0"
             >
                 🌍 Next Destination
             </OptionCard>

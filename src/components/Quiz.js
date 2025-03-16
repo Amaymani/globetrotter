@@ -165,7 +165,7 @@ const Quiz = () => {
 
     return (
         <section className="container px-6 py-6 flex flex-col justify-center pt-16">
-            <Badge className={"bg-sky-200 text-sky-500 mb-5"}>Answer and Score</Badge>
+            <Badge className={"bg-transparent text-md mb-2  text-purple-800"}>Answer & Unlock Your Next Stop! ✈</Badge>
 
 
             <QuestionCard className="question text-xl bg-sky-50 p-6 min-h-[120px] max-w-[76rem] rounded-3xl flex items-center justify-center mb-6 transition-all duration-500 transform relative">
@@ -173,17 +173,17 @@ const Quiz = () => {
                     {showNextClue ? (
                         <div>
                             <div>
-                                <span className="font-bold text-sky-400">Clue 1: </span>
+                                <span className="font-bold  text-yellow-500">Clue 1: </span>
                                 {randomDestination.correctDestination.clues[0]}
                             </div>
                             <div>
-                                <span className="font-bold text-sky-400">Clue 2: </span>
+                                <span className="font-bold text-yellow-500">Clue 2: </span>
                                 {randomDestination.correctDestination.clues[1]}
                             </div>
                         </div>
                     ) : (
-                        <div>
-                            <span className="font-bold text-sky-400">Clue 1: </span>
+                        <div className='text-black font-semibold'>
+                            <span className="font-bold text-yellow-500">Clue 1: </span>
                             {randomDestination.correctDestination.clues[0]}
                         </div>
                     )}
@@ -192,9 +192,10 @@ const Quiz = () => {
                 {!showNextClue && (
                     <button
                         onClick={() => setShowNextClue(true)}
-                        className="absolute bottom-2 right-2 text-gray-400 px-3 py-1 text-base rounded-xs hover:text-sky-500 transition duration-300"
+                        className="absolute bottom-2 right-2 text-gray-600 px-3 py-1 text-lg font-bold rounded-xs hover:text-purple-400 transition duration-300"
                     >
-                        Next Clue
+                        More Clues, Please!💡
+
                     </button>
                 )}
             </QuestionCard>
@@ -206,7 +207,7 @@ const Quiz = () => {
                         <OptionCard
                             option="Play"
                             disabled={!!selected} // Disable after selection
-                            className={`py-5 px-8 w-full max-w-md h-20 rounded-2xl text-center font-bold text-lg transition-all`}
+                            className={`py-5 px-8 w-full max-w-md h-20 rounded-2xl text-center font-bold text-xl transition-all`}
                             onClick={() => checkAnswer(option)}
                         >
                             {option}

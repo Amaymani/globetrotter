@@ -5,8 +5,8 @@ const ScoreCard = ({score,  correctAnswers, totalAnswers, accuracy, highscore}) 
 
   return (
     <div  className=" p-6 mt-8 w-full animate-fade-in">
-      <div className='flex justify-center font-bold'>Highscore:{score>highscore?score:highscore}</div>
-      <h3 className="text-3xl font-bold mb-6 flex items-center text-white justify-center">
+      <div className='flex justify-center text-3xl mb-5 font-bold'>Highscore: {score>highscore?score:highscore}</div>
+      <h3 className="text-2xl font-bold mb-6 flex items-center text-purple-600 justify-center">
         <Trophy className="h-6 w-6 text-yellow-500 mr-3" />
         Your Stats
       </h3>
@@ -33,7 +33,7 @@ const ScoreCard = ({score,  correctAnswers, totalAnswers, accuracy, highscore}) 
       </div>
       
       <div className="mt-8">
-        <div className="text-base text-gray-200 mb-2 flex justify-between">
+        <div className="text-base text-black mb-2 flex justify-between">
           <span>Accuracy</span>
           <span className="font-semibold">{accuracy}%</span>
         </div>

@@ -1,34 +1,34 @@
 import React from "react";
 
-const optionColors = [
-  "bg-blue-500", "bg-green-500", "bg-yellow-500", "bg-purple-500", "bg-orange-500",
-  "bg-red-500", "bg-pink-500", "bg-teal-500", "bg-indigo-500", "bg-lime-500"
-];
+// const optionColors = [
+//   "bg-blue-400", "bg-green-500", "bg-yellow-500", "bg-purple-500", "bg-orange-500",
+//   "bg-red-500", "bg-pink-500", "bg-teal-500", "bg-indigo-500", "bg-lime-500"
+// ];
 
-let usedColors = []; 
-let lastFourColors = [];
+// let usedColors = []; 
+// let lastFourColors = [];
 
-const getUniqueColor = () => {
-  if (usedColors.length === optionColors.length) {
-    usedColors = [];
-  }
+// const getUniqueColor = () => {
+//   if (usedColors.length === optionColors.length) {
+//     usedColors = [];
+//   }
 
-  let randomColor;
-  do {
-    const randomIndex = Math.floor(Math.random() * optionColors.length);
-    randomColor = optionColors[randomIndex];
-  } while (lastFourColors.includes(randomColor));
+//   let randomColor;
+//   do {
+//     const randomIndex = Math.floor(Math.random() * optionColors.length);
+//     randomColor = optionColors[randomIndex];
+//   } while (lastFourColors.includes(randomColor));
 
-  lastFourColors.push(randomColor);
-  if (lastFourColors.length > 4) {
-    lastFourColors.shift(); 
-  }
+//   lastFourColors.push(randomColor);
+//   if (lastFourColors.length > 4) {
+//     lastFourColors.shift(); 
+//   }
 
-  usedColors.push(randomColor);
-  return randomColor;
-};
+//   usedColors.push(randomColor);
+//   return randomColor;
+// };
 
-const OptionCard = ({ option, onClick, className = "", color = getUniqueColor(), disabled = false, children }) => {
+const OptionCard = ({ option, onClick, className = "", color = "bg-purple-500", disabled = false, children }) => {
   return (
     <button
       disabled={disabled}
