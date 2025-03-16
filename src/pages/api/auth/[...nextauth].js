@@ -34,6 +34,7 @@ export default NextAuth({
       if (dbUser) {
         session.user.id = dbUser._id;
         session.user.username = dbUser.username || null; // If username exists
+        session.user.email= dbUser.email || null;
       }
       
       return session;

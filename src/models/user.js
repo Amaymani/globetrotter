@@ -17,6 +17,12 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
     },
+    highscore: {
+      type: Number,
+      default: 0,
+    },
+    
+
  
   },
   {
