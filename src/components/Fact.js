@@ -1,40 +1,41 @@
 import React from 'react'
 import { Check, Frown } from 'lucide-react'
-
+import { OptionCard } from './ui/card'
 
 const Fact = ({ isCorrect, fact, onNextGame }) => {
     return (
-        <div className="glass-card p-6 text-center drop-shadow-lg">
-            <div className="flex justify-center mb-4">
+        <div className="text-center px-6 py-8">
+            <div className="flex justify-center mb-6">
                 {isCorrect ? (
-                    <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center animate-bounce-in">
-                        <Check className="h-8 w-8 text-green-600" />
+                    <div className="w-20 h-20 rounded-full bg-green-200 flex items-center justify-center animate-bounce">
+                        <Check className="h-12 w-12 text-green-700" />
                     </div>
                 ) : (
-                    <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center animate-bounce-in">
-                        <Frown className="h-8 w-8 text-red-600" />
+                    <div className="w-20 h-20 rounded-full bg-red-200 flex items-center justify-center animate-bounce">
+                        <Frown className="h-12 w-12 text-red-700" />
                     </div>
                 )}
             </div>
 
-            <h3 className="text-xl font-bold mb-2">
-                {isCorrect ? "Correct! Well done!" : "Oops! Not quite right."}
+            <h3 className="text-3xl text-white font-bold mb-10">
+                {isCorrect ? "🎉 Correct! Well done!" : "😢 Oops! Not quite right."}
             </h3>
 
             {fact && (
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg animate-fade-in">
-                    <p className="text-balance text-sm font-medium">
-                        <span className="font-bold">Fun Fact:</span> {fact}
+                <div className="mt-6 p-6 bg-sky-100 border-l-4 mb-4 border-sky-500 rounded-3xl animate-fade-in">
+                    <p className="text-balance text-lg font-medium text-gray-800">
+                        <span className="font-bold text-sky-600">Fun Fact:</span> {fact}
                     </p>
                 </div>
             )}
 
-            <button
+            <OptionCard
+                color='bg-green-500'
                 onClick={onNextGame}
-                className="mt-6 px-6 py-2 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 transition-all transform hover:-translate-y-1 active:translate-y-0"
+                className="mt-8 px-8 py-4 shadow-lg border-4 border-white text-xl font-bold text-white uppercase rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1 active:translate-y-0"
             >
-                Next Destination
-            </button>
+                🌍 Next Destination
+            </OptionCard>
         </div>
     )
 }
