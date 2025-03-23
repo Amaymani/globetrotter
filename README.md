@@ -40,8 +40,6 @@
         │       ├── card.jsx
         │       ├── dialog.jsx
         │       └── input.jsx
-        ├── data/
-        │   └── data.json        # Quiz data
         ├── lib/
         │   ├── mongo.js         # MongoDB connection
         │   └── utils.js         # Utility functions

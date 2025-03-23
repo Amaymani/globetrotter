@@ -2,7 +2,7 @@ import connectDB from "@/lib/mongo";
 import Destination from "@/models/destination";
 
 export default async function handler(req, res) {
-  await connectDB(); // Ensure DB connection
+  await connectDB(); 
 
   if (req.method === "GET") {
     try {
