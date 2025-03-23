@@ -29,4 +29,6 @@ _id: {
 
 const Destination = mongoose.models?.Destination || mongoose.model("destinations", destinationSchema);
 
+
 export default Destination;
+

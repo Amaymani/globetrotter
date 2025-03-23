@@ -16,10 +16,6 @@ export default async function handler(req, res) {
             const newUser = new User({ username: username });
             await newUser.save();
 
-
-
-
-        
     
         res.status(200).json({
 

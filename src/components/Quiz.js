@@ -164,7 +164,7 @@ const Quiz = () => {
 
 
     return (
-        <section className="container px-6 py-6 flex flex-col justify-center pt-16">
+        <section className="container px-6 py-6 flex flex-col justify-center pt-8">
             <div className='flex justify-center'>
             <Badge className={"bg-transparent text-md mb-2  text-purple-800"}>Answer & Unlock Your Next Stop! ✈</Badge>
             </div>
